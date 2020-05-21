@@ -1,0 +1,37 @@
+{
+    "root": true,
+    "extends": [
+        "plugin:react/recommended",
+        "@hh.ru/eslint-config",
+        "prettier",
+        "prettier/standard"
+    ],
+    "plugins": ["prettier"],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "classes": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "globals": {
+        "__DEV__": true
+    },
+    "rules": {
+        "class-methods-use-this": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "prettier/prettier": ["error"],
+        "react/no-find-dom-node": "off",
+        "react/prop-types": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "ignoreRestSiblings": true
+            }
+        ]
+    }
+}

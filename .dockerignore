@@ -1,0 +1,13 @@
+*
+!etc
+!jira_reports
+!scripts
+!static/public
+!static/src
+!static/package.json
+!static/yarn.lock
+!usr
+!var
+!Dockerfile
+!requirements.txt
+!run.py

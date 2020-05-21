@@ -1,0 +1,41 @@
+{
+  "name": "agile-process-metrics",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hh.ru/react-d3-chart-graphs": "5.3.0",
+    "axios": "^0.16.2",
+    "d3-array": "~1.2.0",
+    "d3-scale": "~1.0.6",
+    "d3-selection": "~1.1.0",
+    "d3-shape": "~1.2.0",
+    "d3-time-format": "~2.0.5",
+    "lodash.throttle": "^4.1.1",
+    "material-ui": "~0.19.4",
+    "qs": "~6.5.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "~4.3.1",
+    "react-router-redux": "~5.0.0-alpha.9",
+    "react-scripts": "~1.1.5",
+    "react-tap-event-plugin": "~3.0.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@hh.ru/eslint-config": "~3.0.1",
+    "eslint": "4.19.1",
+    "eslint-config-prettier": "~2.9.0",
+    "eslint-plugin-prettier": "~2.6.2",
+    "eslint-plugin-react": "~7.10.0",
+    "prettier": "~1.14.2"
+  }
+}
