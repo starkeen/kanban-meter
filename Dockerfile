@@ -18,12 +18,16 @@ RUN apt-get update \
             python3-pip \
             python3-setuptools \
             nodejs \
-            yarn \
             tzdata \
             sqlite3 \
             redis-server \
             curl \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update
+RUN apt-get install --no-install-recommends --no-install-suggests -y yarn
 
 RUN ln -fs /usr/share/zoneinfo/Europe/Moscow /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
@@ -32,7 +36,6 @@ COPY jira_reports /usr/share/jira-reports/jira_reports
 COPY run.py /usr/share/jira-reports/run.py
 COPY static /usr/share/jira-reports/static
 COPY scripts /usr/share/jira-reports/scripts
-COPY usr/ /usr/
 COPY etc/ /etc/
 COPY var/ /var/
 RUN chmod 755 /etc/init.d/celeryd
