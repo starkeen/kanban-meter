@@ -15,6 +15,7 @@ EXPOSE 1488
 RUN apt-get update \
     && apt-get install --no-install-recommends --no-install-suggests -y --force-yes \
             nginx \
+            npm \
             python3-pip \
             python3-setuptools \
             nodejs \
@@ -24,10 +25,7 @@ RUN apt-get update \
             curl \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update
-RUN apt-get install --no-install-recommends --no-install-suggests -y yarn
+RUN npm install -g yarn
 
 RUN ln -fs /usr/share/zoneinfo/Europe/Moscow /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
